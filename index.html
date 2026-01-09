@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>My portfolio</title>
+
+    <style>
+
+    :root {
+        --bg-color: #f0f0f0;
+        --text-color: #333;
+        --header-bg: #ffedf5;
+        --box-bg: #ffffff;
+        --border-color: brown;
+    }
+
+    body.dark-mode {
+    --bg-color: #121212;
+    --text-color: #e0e0e0;
+    --header-bg: #2d2d2d;
+    --box-bg: #1e1e1e;
+    --border-color: #555;
+    }
+
+    body {
+        margin: 0;
+        background-color: var(--bg-color);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        font-family: 'Courier New', Courier, monospace;
+    }
+
+    header { 
+        width: 100%; 
+        background-color: #ffedf5;
+        border-bottom: 2px solid brown;
+        margin-bottom: 20px;
+    }
+
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+        }
+
+        .grid-item {
+    background-color: var(--header-bg);
+    border: 1px solid var(--border-color);
+    padding: 20px;
+    border-radius: 5px;
+    text-align: center;
+    font-size: 1.2em;
+}
+
+        .grid-item2 {
+            background-color: rgb(185, 235, 255);
+            padding: 20px;
+            border: 1px solid rgb(41, 41, 255);
+            border-radius: 5px;
+            text-align: center;
+            font-size: 1.2em;
+            width: 200px;
+            height: 100px;
+            }
+
+            .grid-item2:hover {
+            background-color: rgb(229, 255, 82);
+            padding: 20px;
+            border: 1px solid rgb(69, 156, 28);
+            border-radius: 5px;
+            text-align: center;
+            font-size: 1.2em;
+            }
+
+        .button1 {
+            background-color: antiquewhite;
+            width: 250px;
+            height: 50px;
+            border: 2px solid black;
+            border-radius: 10px;
+        }
+
+        .button1:hover {
+            background-color: blueviolet;
+            color: blue;
+            border-radius: 10px;
+        }
+
+        .button2 {
+            background: transparent;
+            border: none;
+            outline: none;
+            width: 100px;
+            height: 50px;
+        }
+
+        .button2:hover {
+            background-color: aqua;
+            border: none;
+            outline: none;
+            border-radius: 10px;
+            width: 100px;
+            height: 50px;
+        }
+
+        .card-wrapper {
+            display: flex;
+            gap: 40px;
+            perspective: 1000px;
+            margin: 50px 0;
+        }
+
+        .container {
+            width: 220px; height: 310px; 
+            transition: all 0.1s;
+            position: relative;
+            transform-style: preserve-3d;
+        }
+
+        .overlay {
+            position: absolute;
+            width: 100%; height: 100%;
+            background: linear-gradient(105deg,
+                transparent 40%,
+                rgba(255, 219, 112, 0.8) 45%,
+                rgba(132, 50, 255 ,0.6) 50%,
+                transparent 54%);
+            filter: brightness(1.1) opacity(0); 
+            mix-blend-mode: color-dodge;
+            background-size: 150% 150%;
+            transition: all 0.1s;
+            z-index: 2;
+            border-radius: 15px;
+            pointer-events: none; /* 중요: 마우스 이벤트를 아래 카드가 받게 함 */
+        }
+
+        .card1, .card2, .card3, .card4 {
+            width: 100%; height: 100%;
+            background-size: cover;
+            border-radius: 15px;
+            position: absolute;
+            top: 0; left: 0;
+        }
+
+        .card1 { background-image: url('cat.jpg'); }
+        .card2 { background-image: url('cat1.jpg'); }
+        .card3 { background-image: url('cat2.jpg');}
+        .card4 { background-image: url('cat3.jpg');}
+
+
+    </style>
+</head>
+<body>
+    <header>
+        <h1 class="header-title">나의 포포</h1>
+        <button id="dark-mode-toggle" class="button2">🌙 다크모드</button>
+    </header>
+        <img src="https://www.fitpetmall.com/wp-content/uploads/2023/10/shutterstock_1844153299-1024x683-1.png" class="grid-item" width="1086">
+        <button class="button1" style="font-family: 'Courier New', Courier, monospace;" style="height: 500px;">❤❤❤고양이가 나라다❤❤❤</button>
+
+        <div class="card-wrapper">
+            <div class="container">
+                <div class="overlay"></div>
+                <div class="card1"></div>
+            </div>
+
+            <div class="container">
+                <div class="overlay"></div>
+                <div class="card2"></div>
+            </div>
+            <div class="container">
+                <div class="overlay"></div>
+                <div class="card3"></div> </div>
+            <div class="container">
+                <div class="overlay"></div>
+                <div class="card4"></div> </div>
+        </div>
+
+        <div class="grid-container">
+            <div class="grid-item2">고</div>
+            <div class="grid-item2">양</div>
+            <div class="grid-item2">이</div>
+            <div class="grid-item2">를</div>
+            <div class="grid-item2">사</div>
+            <div class="grid-item2">랑</div>
+            <div class="grid-item2">하</div>
+            <div class="grid-item2">는</div>
+            <div class="grid-item2">사</div>
+            <div class="grid-item2">람</div>
+            <div class="grid-item2">모</div>
+            <div class="grid-item2">임</div>
+        </div>
+
+
+<div>
+    <h2>댓글 남기기</h2>
+    <input type="text" id="comment-input" placeholder="댓글쓰기">
+    <button id="comment-button" class="button1"  style="height: 50px;">댓글추가</button>
+    <ul class="grid-item" id="comment-list">  
+    </ul>
+    </div>
+<script src="app.js"></script>
+    </body>
+</html>
